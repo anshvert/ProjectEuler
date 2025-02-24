@@ -7,3 +7,13 @@ def Sieve(n):
             yield p
             for mul in range(p*p, n + 1, 2 * p):
                 sieve[mul] = False
+
+def divisors_count(num):
+    c = 0
+    for i in range(1,int(num**0.5) + 1):
+        if num % i == 0:
+            if num // i != i:
+                c += 2
+            else:
+                c += 1
+    return c
